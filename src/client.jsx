@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from 'redux'
+import {provider} from 'react-redux'
+import {reducer} from './reducers'
 import Layout from './components/Layout';
 import Me from './components/Me';
 import Home from './components/Home';
@@ -9,6 +12,7 @@ import '../semantic/dist/semantic.min.css';
 import './style/index.scss';
 
 const app = document.getElementById('app');
+const store = createStore(reducer)
 
 ReactDOM.render(
 	<Router history={hashHistory}>
