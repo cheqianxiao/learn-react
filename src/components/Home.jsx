@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MomentsList from './MomentsList';
 import MomentEdit from './MomentEdit';
-import data from '../data/momentslist.json'
+import LoadBtn from './LoadBtn';
 
 
 export default class Home extends React.Component {
@@ -11,7 +11,8 @@ export default class Home extends React.Component {
     return (
       <div>
        <MomentEdit />
-       <MomentsList data={data.data}/>
+       <LoadBtn />
+       <MomentsList/>
       </div>
     );
   }

@@ -1,22 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {connect} from 'react-redux'
 import MommentItem from './MomentItem';
 
+let MomentsList = ({list})=>(
+	
+	<ul>
+	{list.map((moment)=>{
+		<MommentItem {...moment}/>
+	})}
+	</ul>
 
+)
+const mapStateToProps = (state) => ({
+  list: state.allmoments
+})
 
-export default class MomentsList extends React.Component {
-	constructor(){
-		super()
-	}
-	render(){
-		let momentsList = this.props.data.map((item,index)=>{
-			return (
-				<li key={index}>
-				<MommentItem momentData={item} />
-			</li>
-				)
-			
-		})
-		return (<div><ul>{momentsList}</ul></div>)
-	}
-}
+MomentsList = connect(
+  mapStateToProps
+)(MomentsList)
+
+export default MomentsList

@@ -15,26 +15,31 @@ const moment = (state, action) => {
 
       return {
         ...state,
-        like_count: !state.like_count+1
+        like_count: state.like_count+1
       }
     default:
       return state
   }
 }
-const allmoments = (state, action) => {
+const allmoments = (state = [], action) => {
     switch (action.type) {
+    	case 'LOAD_MOMENTS':
+            return [
+                ...state,
+                moment(undefined, action)
+            ]
         case 'ADD_MOMENT':
             return [
                 ...state,
-                todo(undefined, action)
+                moment(undefined, action)
             ]
         case 'LIKE_MOMENT':
             return state.map(t =>
-                todo(t, action)
+                moment(t, action)
             )
         case 'COMMENT_MOMENT':
             return state.map(t =>
-                todo(t, action)
+                moment(t, action)
             )
 
         default:

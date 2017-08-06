@@ -24,8 +24,8 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react'],
-                    plugins: ['react-html-attrs','transform-decorators-legacy']
+                    presets: ['react','es2015'],
+                    plugins: ['react-html-attrs','transform-decorators-legacy','transform-object-rest-spread']
                 },
                 exclude: /node_modules/,
             },

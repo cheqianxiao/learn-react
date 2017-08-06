@@ -2,9 +2,9 @@ import { combineReducers } from 'redux'
 import allmoments from './allmoments'
 import momentsFilter from './momentsFilter'
 
-const todoApp = combineReducers({
+const NanNan = combineReducers({
   allmoments,
   momentsFilter
 })
 
-export default todoApp
+export default NanNan
