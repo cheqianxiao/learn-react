@@ -24,10 +24,7 @@ const moment = (state, action) => {
 const allmoments = (state = [], action) => {
     switch (action.type) {
     	case 'LOAD_MOMENTS':
-            return [
-                ...state,
-                moment(undefined, action)
-            ]
+            return 
         case 'ADD_MOMENT':
             return [
                 ...state,
